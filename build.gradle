@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'org.gradlefx', name: 'gradlefx', version: '1.4.0'
+    }
+}
+apply plugin: 'gradlefx'
+apply plugin: 'scaffold'
+
+type='swf'
+playerVersion = '23.0'
+
+dependencies {
+    test files(project.file('libs/flexUnitTasks-4.1.0-8.jar').absolutePath,
+            project.file('libs/flexunit-4.1.0-8-flex_4.1.0.16076.swc').absolutePath,
+            project.file('libs/flexunit-cilistener-4.1.0-8-4.1.0.16076.swc').absolutePath,
+            project.file('libs/flexunit-uilistener-4.1.0-8-4.1.0.16076.swc').absolutePath)
+}
+
+flexUnit {
+    verbose = true
+    additionalCompilerOptions = [
+            '-target-player=23.0',
+    ]
+}

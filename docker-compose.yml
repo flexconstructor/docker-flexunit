@@ -1,0 +1,21 @@
+version: '2'
+services:
+  flex-sdk:
+    image: flex-sdk
+    container_name: flex-sdk
+    build:
+      context: ./flexsdk
+  flex-builder:
+    image: flex-builder
+    build:
+      context: ./
+    container_name: flex-builder
+    volumes_from:
+      - flex-sdk
+    environment:
+      - FLEX_HOME=/flex-sdk/apache-flex-sdk-4.15.0-bin/
+    depends_on:
+      - flex-sdk
+    volumes:
+      - .:/opt/flash/workspace:rw
+    command: gradle buildFx -debug

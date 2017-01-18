@@ -1,23 +1,18 @@
 # docker-flexunit
-Gradle container based on Ubuntu
+Gradle container based on Debian.
 This container include:
-* Ant
 * Gradle
 * Xvfb
-* Flash Player 11.1 Projector content debugger
-* FlexSDK 4.15
-* FlexUnit 4.2.0
+* Flash Player 24.0 Projector content debugger
 
 ## Usage
-By defaut, running this image will run 
-For example, you can run the following to build and test flash/flex application:
+See docker-compose.yml file
+
+For run:
 
 ```
-docker run --rm -v /path/to/your/project:/opt/flash/workspace:rw flexconstructor/docker-flexunit
-
+$ docker-compose up --build
 ```
-
-Simple usage example with Gradle [here](https://github.com/flexconstructor/docker-flex-unit-example)
 
 ## Get the Image
 To build this image yourself, run...
@@ -33,3 +28,9 @@ You can pull the image from the central docker repository by using...
 docker pull flexconstructor/docker-flexunit
 
 ```
+
+## Changes:
+1. FlexSDK isolated as a separate image.
+2. Removed FlexUnit.
+3. Add example project.
+4. Used Flash player v.24 CA content debugger.
