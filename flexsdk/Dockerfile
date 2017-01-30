@@ -18,8 +18,7 @@ RUN apk update && apk upgrade &&  \
     apk add --no-cache bash       \
                        wget       \
                        apache-ant \
-                       rsync      \
-                       openssh
+                       rsync
 
 
 #==================================

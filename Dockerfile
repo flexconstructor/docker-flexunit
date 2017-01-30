@@ -16,19 +16,9 @@ ENV FLASH_PLAYER_LINK      https://fpdownload.macromedia.com/pub/labs/flashrunti
 # Install Dependencies.
 #==================================
 
+# for running standalone debug flashplayer
 RUN apt-get update &&   \
 	apt-get install -y  \
-			curl        \
-			openssl     \
-			tar         \
-			bzip2       \
-			unzip       \
-			git         \
-			libxtst6    \
-
-# for running standalone debug flashplayer
-
-			libxcursor1 \
 			libnss3	    \
 			libgtk2.0-0 \
 			xvfb &&     \
